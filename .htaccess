@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{QUERY_STRING} ^id=(\d)+
+RewriteRule ^reg.php$ %1
