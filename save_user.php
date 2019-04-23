@@ -25,7 +25,7 @@ if (!empty($myrow['id'])) {
 
 if ($result2=='TRUE')
 {
-    echo "You successful registered! <a href='index.php'>Main page</a>";
+    echo "You successful registered! Now you can login.<a href='main.php'>Main page</a>";
 }
 else {
     echo "Error! You are not registered.";
