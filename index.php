@@ -28,8 +28,9 @@ session_start();
                     echo "You entered as ".$_SESSION['login'];
                 }
                 ?> |
+                <a href="profile.php">Profile</a>
                 <form>
-                <input type="submit" name="logout" value="logout" />
+                    <a href="index.php" name="logout" value="logout">Logout</a>
                 </form>
                     <?php
                 ?>
@@ -40,5 +41,16 @@ session_start();
 			</form>
             <?php print_r($_SESSION); ?>
 		</header>
+
+
+<!--<? //some function() $one = id ?>
+    <table>
+        <tr>
+            <th><?//$one?></th>
+        </tr>
+    </table>
+-->
+
+
 </body>
 </html>

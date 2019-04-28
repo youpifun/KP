@@ -1,43 +1,70 @@
+<?php
+session_start();
+?>
 <html>
 <head>
     <title>Catalog</title>
 </head>
 
 <body>
-    <p>Your balance:  <?php
-        print_r($_SESSION);
+    Your balance:  <?php
         include ("bd.php");
         $id=$_SESSION['id'];
         $result = mysql_query("SELECT * FROM users WHERE id='$id'", $db);
         $myrow = mysql_fetch_array($result);
         $balance = $myrow['balance'];
-
-        if($_GET){
-            if(isset($_GET['fill_balance'])){
-                fill_balance();
-            }elseif(isset($_GET['buy'])){
+        echo $balance;
+        if($_POST){
+            if(isset($_POST['buy'])){
                 buy();
             }
-        }
-        function fill_balance()
-        {
-
         }
 
         function buy()
         {
 
-            echo "The buy function is called.";
+            ;
         }
-        ?></p><br>
+        ?><br>
     <div class="offer-list">
-        <div class="offer-item">
-            <form>
-                <!--<input type="text" name="txt" /> -->
-                <input type="submit" name="fill_balance" value="fill_balance" />
-                <input type="submit" name="buy" value="buy" />
+        <h2>Catalog</h2>
+        <?php
+        $Status='InMarket';
+        $result = mysql_query("SELECT * FROM Products WHERE Status = '$Status'", $db);
+
+
+        while ($myrow = mysql_fetch_array($result))
+        {
+            ?>
+            <form method="post">
+                <p>
+                    Name:
+                     <?php
+                        echo $myrow['ProductName'];
+                     ?>
+                <br>
+                    Price:
+                     <?php
+                         echo $myrow['Price'];
+                     ?>
+                <br>
+                </p>
+                <input type="submit" name="buy" value="buy"/>
             </form>
-        </div>
+        <?php
+            print_r($myrow);
+        }
+        ?>
+
+            <form method="post">
+                <!--<input type="text" name="txt" /> -->
+
+                <p>
+                    <a href="index.php" class="auth-button">Return
+                    </a>
+                </p>
+            </form>
+
     </div>
 
 </body>
