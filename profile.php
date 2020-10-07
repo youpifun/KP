@@ -217,7 +217,6 @@ if($UserType=='Customer'):
 $SellerID = $_SESSION['id'];
 $db = mysqli_connect ("localhost","root","password");
 mysqli_select_db ($db,"users");
-//ОШИБКА выводится только одно ID, возможное решение: юзать массив, чтобы потом корректно работал вывод информации
 $resultRow = mysqli_query($db, "SELECT users.login, Products.ProductName, Sells.Status, Sells.id FROM Sells INNER JOIN users ON Sells.id_Customer=users.id, Products WHERE SellerID = '$SellerID' AND Sells.ProductID = Products.id AND (Sells.Status = 'WaitingReceipt' OR Sells.Status = 'ReceiptApplied')");
 $myrow1 = mysqli_fetch_all($resultRow);
 ?>

@@ -17,7 +17,7 @@ session_start();
 		<a href="#about">About</a>
 		<?php if (empty($_SESSION['login']) or empty($_SESSION['id']))
                 { ?>
-				<a class="right2" href="main2.php">Login</a> 
+				<a class="right2" href="auth-page.php">Login</a> 
 				<?; }
 				else
 				{ ?>

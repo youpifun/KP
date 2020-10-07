@@ -49,16 +49,22 @@ form {
 
 #borderBlock {
 	position: absolute;
-	top: 15%;
-	left: 28%;
-	width: 45%;
+	top: 24%;
+	left: 32%;
+	width: 35%;
 	min-width: 480px;
-	height: 70%;
+	height: 50%;
 	box-shadow: 0 0 16px 10px rgba(0,0,0,0.5);
 	background-color: #808080;
+	zoom: 0.7;
 }
 
-
+a {
+	position: absolute; 
+	text-decoration: none; 
+	margin-left: 2%; 
+	margin-top: 2%;
+}
 
 #signin {
 	display: none;
